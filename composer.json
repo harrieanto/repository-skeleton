@@ -1,0 +1,40 @@
+{
+	"name": "Repository php framework",
+	"description": "Repository Modern & Beautiful Micro PHP Framework",
+	"keywords": [ "Repository",  "PHP", "PHP Framework",  "Micro PHP Framework",  "Beauty",  "Modern",  "Simple",  "Framework" ],
+	"license": "MIT",
+	"authors":[
+		{
+		   "name": "Harrieanto",
+		   "email": "harrieanto31@yahoo.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"App\\": "app", 
+			"Medium\\Style\\": "app/Mediumstyle",
+			"Repository\\Component\\": "framework"
+		}, 
+		"files": [
+			"vendor/repository/framework/Support/helpers.php"
+		]
+	},
+
+	"autoload-dev": {
+		"psr-4": {
+			"app\\Http\\Tests\\": "tests"
+		}
+	},
+	"require":{
+		"symfony/yaml": "^3.0", 
+		"erusev/parsedown": "^1.7",
+		"erusev/parsedown-extra": "^0.7.1",
+		"nesbot/carbon": "^1.22",
+		"psr/http-message": "^1.0",
+		"psr/log": "^1.0",
+		"doctrine/orm": "^2.6"
+	},
+	"require-dev":{
+		"phpunit/phpunit": "~4.0"
+	}
+}

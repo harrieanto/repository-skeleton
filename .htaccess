@@ -1,0 +1,26 @@
+# Enable rewrite engine and route requests to framework
+RewriteEngine On
+
+# Some servers require you to specify the `RewriteBase` directive
+# In such cases, it should be the path (relative to the document root)
+# containing this .htaccess file
+#
+# RewriteBase /
+
+# Handle Front Controller...
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* index.php [L,QSA]
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+
+<Files ~ "^.*\.((php[^(index.php)])|(config)|(lock)|(json)|(md)|(log)|(txt)|(env)|(yml)|(ini))">
+    Order allow,deny
+    Deny from all
+	Satisfy All
+	</Files>
+	<Files ~ "(.*LICENSE)">
+	Order allow,deny
+	Deny from all
+	Satisfy All
+</Files>
